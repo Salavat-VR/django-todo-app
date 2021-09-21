@@ -4,5 +4,5 @@ exclude=env,tests/*
 application-import-names=app
 import-order-style=google
 max-complexity=10
-ignore=D103
+ignore=D103,E126
 inline-quotes="
