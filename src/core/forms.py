@@ -1,4 +1,4 @@
-from django.forms import ModelForm, Textarea, TextInput
+from django.forms import ModelForm
 
 from .models import *
 
@@ -7,12 +7,7 @@ class TaskForm(ModelForm):
     """
     basic presentation form for Task model
     """
+
     class Meta:
         model = Task
-        fields = ["title"]
-        widgets = {
-            "title": TextInput(attrs={
-                "class": "form-control",
-                "placeholder": "Add task",
-            }),
-        }
+        fields = '__all__'

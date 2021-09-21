@@ -1,11 +1,11 @@
-from django.conf.urls import url
-from django.urls import path, include
-from django.views.decorators.cache import cache_page
-from django.views.generic import RedirectView
+from django.urls import path
 
 from . import views
 
+app_name = 'todos'
 urlpatterns = [
-    path('', views.index),
-
+    path('', views.IndexView.as_view(), name='index'),
+    path('<int:todo_id>/delete', views.delete, name='delete'),
+    path('<int:todo_id>/update', views.update, name='update'),
+    path('add/', views.add, name='add')
 ]
